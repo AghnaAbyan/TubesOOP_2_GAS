@@ -227,11 +227,12 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_PengaturanActionPerformed
 
     private void Pembayaran1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pembayaran1ActionPerformed
-        // TODO add your handling code here:
+        new Pembelian().setVisible(true);
     }//GEN-LAST:event_Pembayaran1ActionPerformed
 
     private void Barang1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Barang1ActionPerformed
         // TODO add your handling code here:
+        new Barang().setVisible(true);
     }//GEN-LAST:event_Barang1ActionPerformed
 
     private void PenggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PenggunaActionPerformed
