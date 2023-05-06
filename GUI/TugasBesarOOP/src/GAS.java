@@ -410,7 +410,7 @@ public class GAS extends javax.swing.JFrame {
         button_submit.setText("Submit");
         button_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
+
             }
         });
         panel_context.add(button_submit, gbc8);
@@ -429,7 +429,85 @@ public class GAS extends javax.swing.JFrame {
         button_update_pengguna.setText("Update Pengguna");
         button_update_pengguna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                panel_title.removeAll();
+                panel_title.revalidate();
+                panel_title.repaint();
+                panel_context.removeAll();
+                panel_context.revalidate();
+                panel_context.repaint();
 
+                GridBagConstraints gbc = new GridBagConstraints();
+                gbc.gridx = 0;
+                gbc.gridy = 0;
+                gbc.weightx = 1.0;
+                gbc.weighty = 1.0;
+                gbc.fill = GridBagConstraints.CENTER;
+                gbc.anchor = GridBagConstraints.CENTER;
+
+                JLabel label_update_pengguna = new JLabel();
+                label_update_pengguna.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+                label_update_pengguna.setForeground(new Color(255, 255, 255));
+                label_update_pengguna.setText("<html>UPDATE <br> PENGGUNA</html>");
+                panel_title.setLayout(new GridBagLayout());
+                panel_title.add(label_update_pengguna,gbc);
+
+                gbc.gridx = 0;
+                gbc.gridy = 0;
+                gbc.weightx = 1.0;
+                gbc.weighty = 1.0;
+                gbc.fill = GridBagConstraints.CENTER;
+                gbc.anchor = GridBagConstraints.PAGE_START;
+
+                panel_context.setLayout(new GridBagLayout());
+
+                GridBagConstraints gbc1 = new GridBagConstraints();
+                gbc1.gridx = 0;
+                gbc1.gridy = 0;
+                gbc1.weightx = 1.0;
+                gbc1.weighty = 0.2;
+                gbc1.fill = GridBagConstraints.CENTER;
+                gbc1.anchor = GridBagConstraints.CENTER;
+                gbc1.insets = new Insets(2, 0, 0, 0);
+
+                JLabel label_nama_up = new JLabel();
+                label_nama_up.setFont(new java.awt.Font("Arial", 0, 15));
+                label_nama_up.setText("Nama");
+                label_nama_up.setHorizontalAlignment(JLabel.CENTER);
+                panel_context.add(label_nama_up, gbc1);
+
+                GridBagConstraints gbc2 = new GridBagConstraints();
+                gbc2.gridx = 0;
+                gbc2.gridy = 1;
+                gbc2.weightx = 1.0;
+                gbc2.weighty = 0.1;
+                gbc2.fill = GridBagConstraints.CENTER;
+                gbc2.anchor = GridBagConstraints.CENTER;
+                gbc2.insets = new Insets(2, 0, 0, 0);
+
+                TextField textField_nama_up = new TextField();
+                textField_nama_up.setColumns(20);
+                textField_nama_up.setBackground(new java.awt.Color(153, 153, 153));
+                textField_nama_up.setFont(new java.awt.Font("Arial", 0, 14));
+                panel_context.add(textField_nama_up, gbc2);
+
+                GridBagConstraints gbc3 = new GridBagConstraints();
+                gbc3.gridx = 0;
+                gbc3.gridy = 2;
+                gbc3.weightx = 1.0;
+                gbc3.weighty = 0.2;
+                gbc3.fill = GridBagConstraints.CENTER;
+                gbc3.anchor = GridBagConstraints.CENTER;
+                gbc3.insets = new Insets(2, 0, 0, 0);
+
+                JButton button_update = new JButton();
+                button_update.setBackground(new java.awt.Color(255, 0, 0));
+                button_update.setText("Update");
+                button_update.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                    }
+                });
+                panel_context.add(button_update, gbc3);
             }
         });
         panel_context.add(button_update_pengguna, gbc9);
