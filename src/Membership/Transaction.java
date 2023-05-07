@@ -24,7 +24,7 @@ public class Transaction {
     }
 
     public int calculatePrice(){
-
+        return 0;
     }
 
     public ArrayList<Bought> getList(){return list;}
