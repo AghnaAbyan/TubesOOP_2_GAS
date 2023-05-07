@@ -15,7 +15,7 @@ public class IDatabase {
         Member a = new Member("Obedc","081");
         Member b = new Member("Obeds","081");
         Customer c = new Customer();
-        db.addCustomer(c);
+        db.addCustomer(b);
 //        db.addCustomer(b);
 
         System.out.println(a.getNama());

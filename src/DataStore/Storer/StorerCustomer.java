@@ -20,6 +20,7 @@ public class StorerCustomer implements Storer {
         customers = new HashMap<>();
         try{
             this.restore();
+            System.out.println("Restored db:");
             System.out.println(this.customers);
         }
         catch(IOException e){
@@ -28,7 +29,9 @@ public class StorerCustomer implements Storer {
     }
 
     public void addCustomer(Customer customer){
+        customer.setIdUser(customers.size()+1);
         customers.put(String.valueOf(customer.getIdUser()), customer);
+
         try{
             this.dump();
         }catch(IOException e){
@@ -76,11 +79,9 @@ public class StorerCustomer implements Storer {
                 if(status!=null) statusStr = status.getAsString();
 
                 if(statusStr.equals("VIP")){
-                    customers.put(key, gson.fromJson(jsonobject.get(key), VIP.class));
-                    Customer.incCustomer();}
+                    customers.put(key, gson.fromJson(jsonobject.get(key), VIP.class));}
                 else if(statusStr.equals("Member")){
-                    customers.put(key, gson.fromJson(jsonobject.get(key), Member.class));
-                    Customer.incCustomer();}
+                    customers.put(key, gson.fromJson(jsonobject.get(key), Member.class));}
                 else
                     customers.put(key, gson.fromJson(jsonobject.get(key), Customer.class));
             }
