@@ -1,13 +1,15 @@
 package PDFPrint;
 import Entitas.Barang;
-public class PDFPrinter {
-    private Barang[] data;
-    
+public class PDFPrinter implements Runnable{
+    private List<Barang> data;
+    private string filaName;
 
-    public PDFPrinter(Barang[] data){
+    public PDFPrinter(List<Barang> data, String filaName){
         this.data = data;
+        this.filaName = filaName;
     }
-    public void print(String filaName){
+
+    public void run(){
         try{
         Document doc = new Document();
         FileOutputStream fos = new FileOutputStream(filaName);
@@ -28,6 +30,9 @@ public class PDFPrinter {
             table.addCell(temp.GetHargaBeli());
             table.addCell(temp.GetKategori());
         }
+        doc.add(table);
+        doc.close();
+        System.out.println("PDF creation is a success"); 
         }catch(Exception e){
             e.printStackTrace();
         }
