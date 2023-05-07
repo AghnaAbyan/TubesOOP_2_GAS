@@ -309,7 +309,7 @@ public class GAS extends javax.swing.JFrame {
         gbc1.insets = new Insets(10, 0, 0, 0);
 
         JLabel label_daftar_pengguna = new JLabel();
-        label_daftar_pengguna.setFont(new java.awt.Font("Arial", 0, 15));
+        label_daftar_pengguna.setFont(new java.awt.Font("Arial", 0, 20));
         label_daftar_pengguna.setText("Daftar Pengguna");
         label_daftar_pengguna.setHorizontalAlignment(JLabel.CENTER);
         panel_context.add(label_daftar_pengguna, gbc1);
@@ -323,11 +323,9 @@ public class GAS extends javax.swing.JFrame {
         gbc2.anchor = GridBagConstraints.CENTER;
         gbc2.insets = new Insets(10, 0, 0, 0);
 
-        TextField textField_nama = new TextField();
-        textField_nama.setColumns(20);
-        textField_nama.setBackground(new java.awt.Color(153, 153, 153));
-        textField_nama.setFont(new java.awt.Font("Arial", 0, 14));
-        panel_context.add(textField_nama, gbc2);
+        JLabel label_nama = new JLabel();
+        label_nama.setText("Nama");
+        panel_context.add(label_nama, gbc2);
 
         GridBagConstraints gbc3 = new GridBagConstraints();
         gbc3.gridx = 0;
@@ -337,10 +335,12 @@ public class GAS extends javax.swing.JFrame {
         gbc3.fill = GridBagConstraints.CENTER;
         gbc3.anchor = GridBagConstraints.CENTER;
         gbc3.insets = new Insets(10, 0, 0, 0);
-        
-        JLabel label_nama = new JLabel();
-        label_nama.setText("Nama");
-        panel_context.add(label_nama, gbc3);
+
+        TextField textField_nama = new TextField();
+        textField_nama.setColumns(20);
+        textField_nama.setBackground(new java.awt.Color(153, 153, 153));
+        textField_nama.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_nama, gbc3);
                 
         GridBagConstraints gbc4 = new GridBagConstraints();
         gbc4.gridx = 0;
@@ -351,11 +351,9 @@ public class GAS extends javax.swing.JFrame {
         gbc4.anchor = GridBagConstraints.CENTER;
         gbc4.insets = new Insets(10, 0, 0, 0);
         
-        TextField textField_notelp = new TextField();
-        textField_notelp.setColumns(20);
-        textField_notelp.setBackground(new java.awt.Color(153, 153, 153));
-        textField_notelp.setFont(new java.awt.Font("Arial", 0, 14));
-        panel_context.add(textField_notelp, gbc4);
+        JLabel label_notelp = new JLabel();
+        label_notelp.setText("Nomor Telepon");
+        panel_context.add(label_notelp, gbc4);
         
         GridBagConstraints gbc5 = new GridBagConstraints();
         gbc5.gridx = 0;
@@ -366,9 +364,11 @@ public class GAS extends javax.swing.JFrame {
         gbc5.anchor = GridBagConstraints.CENTER;
         gbc5.insets = new Insets(10, 0, 0, 0);
         
-        JLabel label_notelp = new JLabel();
-        label_notelp.setText("Nomor Telepon");
-        panel_context.add(label_notelp, gbc5);
+        TextField textField_notelp = new TextField();
+        textField_notelp.setColumns(20);
+        textField_notelp.setBackground(new java.awt.Color(153, 153, 153));
+        textField_notelp.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_notelp, gbc5);
         
         GridBagConstraints gbc6 = new GridBagConstraints();
         gbc6.gridx = 0;
@@ -406,6 +406,7 @@ public class GAS extends javax.swing.JFrame {
         gbc8.insets = new Insets(10, 0, 0, 0);
         
         JButton button_submit = new JButton();
+        button_submit.setPreferredSize(new Dimension(100,50));
         button_submit.setBackground(new java.awt.Color(255, 0, 0));
         button_submit.setText("Submit");
         button_submit.addActionListener(new java.awt.event.ActionListener() {
@@ -425,6 +426,7 @@ public class GAS extends javax.swing.JFrame {
         gbc9.insets = new Insets(10, 0, 0, 0);
         
         JButton button_update_pengguna = new JButton();
+        button_update_pengguna.setPreferredSize(new Dimension(150,50));
         button_update_pengguna.setBackground(new java.awt.Color(255, 51, 51));
         button_update_pengguna.setText("Update Pengguna");
         button_update_pengguna.addActionListener(new java.awt.event.ActionListener() {
@@ -513,19 +515,352 @@ public class GAS extends javax.swing.JFrame {
         panel_context.add(button_update_pengguna, gbc9);
         
         tab_holder.addTab("Pengguna", panel_pengguna);
+        tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
     }//GEN-LAST:event_button_home_penggunaActionPerformed
 
     private void button_pembayaran_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_pembayaran_homeActionPerformed
-//        new Pembelian().setVisible(true);
+        JPanel panel_pembelian = new JPanel(new BorderLayout());
+
+        tab_holder.addTab("Pembelian", panel_pembelian);
+        tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
     }//GEN-LAST:event_button_pembayaran_homeActionPerformed
 
     private void button_home_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_home_barangActionPerformed
         // TODO add your handling code here:
-//        new Barang().setVisible(true);
+        JPanel panel_barang = new JPanel(new BorderLayout());
+
+        JPanel panel_title = new JPanel();
+        panel_title.setBackground(new Color(238, 77, 45));
+        panel_title.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        panel_title.setPreferredSize(new Dimension(450, 600));
+        panel_barang.add(panel_title, BorderLayout.WEST);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 0.1;
+        gbc.fill = GridBagConstraints.CENTER;
+        gbc.anchor = GridBagConstraints.CENTER;
+        JLabel label_pengguna = new JLabel();
+        label_pengguna.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        label_pengguna.setForeground(new Color(255, 255, 255));
+        label_pengguna.setText("BARANG");
+        panel_title.setLayout(new GridBagLayout());
+        panel_title.add(label_pengguna,gbc);
+
+        JPanel panel_context = new JPanel();
+        panel_context.setBackground(new Color(255, 255, 255));
+        panel_context.setLayout(new GridBagLayout());
+        panel_context.setPreferredSize(new Dimension(540, 600));
+        panel_barang.add(panel_context, BorderLayout.EAST);
+
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.gridx = 0;
+        gbc1.gridy = 0;
+        gbc1.weightx = 1.0;
+        gbc1.weighty = 0.1;
+        gbc1.fill = GridBagConstraints.CENTER;
+        gbc1.anchor = GridBagConstraints.CENTER;
+        gbc1.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_nama_barang = new JLabel();
+        label_nama_barang.setFont(new java.awt.Font("Arial", 0, 15));
+        label_nama_barang.setText("Nama barang");
+        label_nama_barang.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_nama_barang, gbc1);
+
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.gridx = 0;
+        gbc2.gridy = 1;
+        gbc2.weightx = 1.0;
+        gbc2.weighty = 0.1;
+        gbc2.fill = GridBagConstraints.CENTER;
+        gbc2.anchor = GridBagConstraints.CENTER;
+        gbc2.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_nama_barang = new TextField();
+        textField_nama_barang.setColumns(20);
+        textField_nama_barang.setBackground(new java.awt.Color(153, 153, 153));
+        textField_nama_barang.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_nama_barang, gbc2);
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.gridx = 0;
+        gbc3.gridy = 2;
+        gbc3.weightx = 1.0;
+        gbc3.weighty = 0.1;
+        gbc3.fill = GridBagConstraints.CENTER;
+        gbc3.anchor = GridBagConstraints.CENTER;
+        gbc3.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_stok = new JLabel();
+        label_stok.setFont(new java.awt.Font("Arial", 0, 15));
+        label_stok.setText("Stok");
+        label_stok.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_stok, gbc3);
+
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.gridx = 0;
+        gbc4.gridy = 3;
+        gbc4.weightx = 1.0;
+        gbc4.weighty = 0.1;
+        gbc4.fill = GridBagConstraints.CENTER;
+        gbc4.anchor = GridBagConstraints.CENTER;
+        gbc4.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_stok = new TextField();
+        textField_stok.setColumns(20);
+        textField_stok.setBackground(new java.awt.Color(153, 153, 153));
+        textField_stok.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_stok, gbc4);
+
+        GridBagConstraints gbc5 = new GridBagConstraints();
+        gbc5.gridx = 0;
+        gbc5.gridy = 4;
+        gbc5.weightx = 1.0;
+        gbc5.weighty = 0.1;
+        gbc5.fill = GridBagConstraints.CENTER;
+        gbc5.anchor = GridBagConstraints.CENTER;
+        gbc5.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_harga_barang = new JLabel();
+        label_harga_barang.setFont(new java.awt.Font("Arial", 0, 15));
+        label_harga_barang.setText("Harga barang");
+        label_harga_barang.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_harga_barang, gbc5);
+
+        GridBagConstraints gbc6 = new GridBagConstraints();
+        gbc6.gridx = 0;
+        gbc6.gridy = 5;
+        gbc6.weightx = 1.0;
+        gbc6.weighty = 0.1;
+        gbc6.fill = GridBagConstraints.CENTER;
+        gbc6.anchor = GridBagConstraints.CENTER;
+        gbc6.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_harga_barang = new TextField();
+        textField_harga_barang.setColumns(20);
+        textField_harga_barang.setBackground(new java.awt.Color(153, 153, 153));
+        textField_harga_barang.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_harga_barang, gbc6);
+
+        GridBagConstraints gbc7 = new GridBagConstraints();
+        gbc7.gridx = 0;
+        gbc7.gridy = 6;
+        gbc7.weightx = 1.0;
+        gbc7.weighty = 0.1;
+        gbc7.fill = GridBagConstraints.CENTER;
+        gbc7.anchor = GridBagConstraints.CENTER;
+        gbc7.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_harga_beli = new JLabel();
+        label_harga_beli.setFont(new java.awt.Font("Arial", 0, 15));
+        label_harga_beli.setText("Harga beli barang");
+        label_harga_beli.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_harga_beli, gbc7);
+
+        GridBagConstraints gbc8 = new GridBagConstraints();
+        gbc8.gridx = 0;
+        gbc8.gridy = 7;
+        gbc8.weightx = 1.0;
+        gbc8.weighty = 0.1;
+        gbc8.fill = GridBagConstraints.CENTER;
+        gbc8.anchor = GridBagConstraints.CENTER;
+        gbc8.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_harga_beli = new TextField();
+        textField_harga_beli.setColumns(20);
+        textField_harga_beli.setBackground(new java.awt.Color(153, 153, 153));
+        textField_harga_beli.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_harga_beli, gbc8);
+
+        GridBagConstraints gbc9 = new GridBagConstraints();
+        gbc9.gridx = 0;
+        gbc9.gridy = 8;
+        gbc9.weightx = 1.0;
+        gbc9.weighty = 0.1;
+        gbc9.fill = GridBagConstraints.CENTER;
+        gbc9.anchor = GridBagConstraints.CENTER;
+        gbc9.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_kategori = new JLabel();
+        label_kategori.setFont(new java.awt.Font("Arial", 0, 15));
+        label_kategori.setText("Kategori");
+        label_kategori.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_kategori, gbc9);
+
+        GridBagConstraints gbc10 = new GridBagConstraints();
+        gbc10.gridx = 0;
+        gbc10.gridy = 9;
+        gbc10.weightx = 1.0;
+        gbc10.weighty = 0.1;
+        gbc10.fill = GridBagConstraints.CENTER;
+        gbc10.anchor = GridBagConstraints.CENTER;
+        gbc10.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_kategori = new TextField();
+        textField_kategori.setColumns(20);
+        textField_kategori.setBackground(new java.awt.Color(153, 153, 153));
+        textField_kategori.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_kategori, gbc10);
+
+        GridBagConstraints gbc11 = new GridBagConstraints();
+        gbc11.gridx = 0;
+        gbc11.gridy = 10;
+        gbc11.weightx = 1.0;
+        gbc11.weighty = 0.1;
+        gbc11.fill = GridBagConstraints.CENTER;
+        gbc11.anchor = GridBagConstraints.CENTER;
+        gbc11.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_gambar = new JLabel();
+        label_gambar.setFont(new java.awt.Font("Arial", 0, 15));
+        label_gambar.setText("Gambar");
+        label_gambar.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_gambar, gbc11);
+
+        GridBagConstraints gbc12 = new GridBagConstraints();
+        gbc12.gridx = 0;
+        gbc12.gridy = 11;
+        gbc12.weightx = 1.0;
+        gbc12.weighty = 0.1;
+        gbc12.fill = GridBagConstraints.CENTER;
+        gbc12.anchor = GridBagConstraints.CENTER;
+        gbc12.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_gambar = new TextField();
+        textField_gambar.setColumns(20);
+        textField_gambar.setBackground(new java.awt.Color(153, 153, 153));
+        textField_gambar.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_gambar, gbc12);
+
+        GridBagConstraints gbc13 = new GridBagConstraints();
+        gbc13.gridx = 0;
+        gbc13.gridy = 12;
+        gbc13.weightx = 1.0;
+        gbc13.weighty = 0.1;
+        gbc13.fill = GridBagConstraints.CENTER;
+        gbc13.anchor = GridBagConstraints.CENTER;
+        gbc13.insets = new Insets(10, 0, 0, 0);
+
+        JButton button_submit = new JButton();
+        button_submit.setPreferredSize(new Dimension(100,50));
+        button_submit.setBackground(new java.awt.Color(255, 0, 0));
+        button_submit.setText("Submit");
+        button_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            }
+        });
+        panel_context.add(button_submit, gbc13);
+
+        tab_holder.addTab("Barang", panel_barang);
+        tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
+
     }//GEN-LAST:event_button_home_barangActionPerformed
 
     private void button_home_pengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_home_pengaturanActionPerformed
         // TODO add your handling code here:
+        JPanel panel_pengaturan = new JPanel(new BorderLayout());
+        JPanel panel_title = new JPanel();
+        panel_title.setBackground(new Color(238, 77, 45));
+        panel_title.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        panel_title.setPreferredSize(new Dimension(450, 600));
+        panel_pengaturan.add(panel_title, BorderLayout.WEST);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.CENTER;
+        gbc.anchor = GridBagConstraints.CENTER;
+        JLabel label_penaturan = new JLabel();
+        label_penaturan.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        label_penaturan.setForeground(new Color(255, 255, 255));
+        label_penaturan.setText("PENGATURAN");
+        panel_title.setLayout(new GridBagLayout());
+        panel_title.add(label_penaturan,gbc);
+
+        JPanel panel_context = new JPanel();
+        panel_context.setBackground(new Color(255, 255, 255));
+        panel_context.setLayout(new GridBagLayout());
+        panel_context.setPreferredSize(new Dimension(540, 600));
+        panel_pengaturan.add(panel_context, BorderLayout.EAST);
+
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.gridx = 0;
+        gbc1.gridy = 0;
+        gbc1.weightx = 1.0;
+        gbc1.weighty = 1.0;
+        gbc1.fill = GridBagConstraints.CENTER;
+        gbc1.anchor = GridBagConstraints.CENTER;
+        gbc1.insets = new Insets(10, 0, 0, 0);
+
+        JLabel label_penyimpanan_file = new JLabel();
+        label_penyimpanan_file.setFont(new java.awt.Font("Arial", 0, 20));
+        label_penyimpanan_file.setText("Penyimpanan file");
+        label_penyimpanan_file.setHorizontalAlignment(JLabel.CENTER);
+        panel_context.add(label_penyimpanan_file, gbc1);
+
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.gridx = 0;
+        gbc2.gridy = 1;
+        gbc2.weightx = 1.0;
+        gbc2.weighty = 1.0;
+        gbc2.fill = GridBagConstraints.CENTER;
+        gbc2.anchor = GridBagConstraints.CENTER;
+        gbc2.insets = new Insets(10, 0, 0, 0);
+
+        TextField textField_penyimpanan = new TextField();
+        textField_penyimpanan.setColumns(20);
+        textField_penyimpanan.setBackground(new java.awt.Color(153, 153, 153));
+        textField_penyimpanan.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_context.add(textField_penyimpanan, gbc2);
+
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.gridx = 0;
+        gbc3.gridy = 2;
+        gbc3.weightx = 1.0;
+        gbc3.weighty = 1.0;
+        gbc3.fill = GridBagConstraints.CENTER;
+        gbc3.anchor = GridBagConstraints.CENTER;
+        gbc3.insets = new Insets(10, 0, 0, 0);
+
+        JButton button_submit = new JButton();
+        button_submit.setPreferredSize(new Dimension(100,50));
+        button_submit.setBackground(new java.awt.Color(238, 77, 45));
+        button_submit.setText("Change");
+        button_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            }
+        });
+        panel_context.add(button_submit, gbc3);
+
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.gridx = 0;
+        gbc4.gridy = 3;
+        gbc4.weightx = 1.0;
+        gbc4.weighty = 1.0;
+        gbc4.fill = GridBagConstraints.CENTER;
+        gbc4.anchor = GridBagConstraints.CENTER;
+        gbc4.insets = new Insets(10, 0, 0, 0);
+
+        JButton button_plugin = new JButton();
+        button_plugin.setPreferredSize(new Dimension(200,100));
+        button_plugin.setBackground(new java.awt.Color(255, 255, 255));
+        button_plugin.setText("Plugin");
+        button_plugin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            }
+        });
+        panel_context.add(button_plugin, gbc4);
+        tab_holder.addTab("Pengaturan", panel_pengaturan);
+        System.out.println(tab_holder.getTabCount());
+        tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
     }//GEN-LAST:event_button_home_pengaturanActionPerformed
 
     /**
