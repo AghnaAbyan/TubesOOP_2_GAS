@@ -38,7 +38,6 @@ class VIP extends Customer {
     private String nama;
     private Double noTelp;
     private int poin;
-    private int hargaBarang;
 
     public String getNama() {
         return this.nama;
@@ -52,13 +51,12 @@ class VIP extends Customer {
         return this.poin;
     }
 
-    public void addPoin() {
-        int amount = 0.1 * this.hargaBarang;
-        this.poin += (0.01 * amount);
+    public void addPoin(int bayar) {
+        this.poin += (0.01 * bayar);
     }
 
-    public void minusPoin(int) {
-        int amount = 0.1 * this.hargaBarang;
+    public void minusPoin(int bayar) {
+        int amount = 0.1 * bayar;
         this.poin -= (0.01 * amount);
     }
 }
