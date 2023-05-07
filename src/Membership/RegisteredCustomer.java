@@ -1,29 +1,18 @@
-package membership;
+package Membership;
 
-public class Customer {
-    private int idUser;
+public abstract class RegisteredCustomer extends Customer{
+    private String status;
+    private String nama;
+    private String noTelp;
+    private int poin;
+    public String getNama() {return this.nama;}
+    public String getNoTelp() {return this.noTelp;}
+    public int getPoin(){return this.poin;}
 
-    public int getID() {
-        return this.idUser;
-    }
 }
 
-class Member extends Customer {
-    private String nama;
-    private Double noTelp;
-    private int poin;
-
-    public String getNama() {
-        return this.nama;
-    }
-
-    public Double getNoTelp() {
-        return this.noTelp;
-    }
-
-    public int getPoin() {
-        return this.poin;
-    }
+class Member extends RegisteredCustomer {
+    private boolean active;
 
     public void addPoin(int amount) {
         this.poin += (0.01 * amount);
@@ -36,18 +25,18 @@ class Member extends Customer {
 
 class VIP extends Customer {
     private String nama;
-    private Double noTelp;
-    private int poin;
+    private String noTelp;
+    private double poin;
 
     public String getNama() {
         return this.nama;
     }
 
-    public Double getNoTelp() {
+    public String getNoTelp() {
         return this.noTelp;
     }
 
-    public int getPoin() {
+    public double getPoin() {
         return this.poin;
     }
 
@@ -56,7 +45,7 @@ class VIP extends Customer {
     }
 
     public void minusPoin(int bayar) {
-        int amount = 0.1 * bayar;
+        double amount = 0.1 * bayar;
         this.poin -= (0.01 * amount);
     }
 }

@@ -1,4 +1,4 @@
-package DataStore;
+package Membership;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -18,8 +18,13 @@ public class Transaction {
         this.timestamp = LocalDateTime.now().toString();
     }
 
-    public void addBought(Bought bought){
+    public void addList(int idBarang, int jumlah){
+        Bought bought = new Bought(idBarang, jumlah);
         this.list.add(bought);
+    }
+
+    public int calculatePrice(){
+
     }
 
     public ArrayList<Bought> getList(){return list;}
