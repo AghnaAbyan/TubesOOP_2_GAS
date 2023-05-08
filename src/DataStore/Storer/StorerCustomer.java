@@ -28,8 +28,9 @@ public class StorerCustomer implements Storer {
         }
     }
 
-    public void addCustomer(Customer customer){
-        customer.setIdUser(customers.size()+1);
+    public int addCustomer(Customer customer){
+        int id = customers.size()+1;
+        customer.setIdUser(id);
         customers.put(String.valueOf(customer.getIdUser()), customer);
 
         try{
@@ -37,6 +38,7 @@ public class StorerCustomer implements Storer {
         }catch(IOException e){
             e.printStackTrace();
         }
+        return id;
     }
 
     public void updateCustomer(Customer customer){

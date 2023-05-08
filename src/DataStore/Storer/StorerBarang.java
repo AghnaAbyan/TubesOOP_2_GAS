@@ -46,6 +46,9 @@ public class StorerBarang implements Storer{
     }
 
     public void updateBarang(Barang barang){addBarang(barang);}
+    public Barang getBarang(int idBarang){
+        return this.gudang.get(String.valueOf(idBarang));
+    }
 
     public HashMap<String, Barang> getGudang(){return gudang;}
 
