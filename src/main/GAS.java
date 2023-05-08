@@ -1,7 +1,12 @@
-import java.util.Date;
-import java.text.SimpleDateFormat;
+package main;
+
+import DataStore.IDatabase;
+
 import javax.swing.*;
 import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,7 +17,7 @@ import java.awt.*;
  * @author ASUS
  */
 public class GAS extends javax.swing.JFrame {
-
+    IDatabase db = new IDatabase();
     /**
      * Creates new form GAS
      */
@@ -341,7 +346,7 @@ public class GAS extends javax.swing.JFrame {
         textField_nama.setBackground(new java.awt.Color(153, 153, 153));
         textField_nama.setFont(new java.awt.Font("Arial", 0, 14));
         panel_context.add(textField_nama, gbc3);
-                
+
         GridBagConstraints gbc4 = new GridBagConstraints();
         gbc4.gridx = 0;
         gbc4.gridy = 3;
@@ -350,11 +355,11 @@ public class GAS extends javax.swing.JFrame {
         gbc4.fill = GridBagConstraints.CENTER;
         gbc4.anchor = GridBagConstraints.CENTER;
         gbc4.insets = new Insets(10, 0, 0, 0);
-        
+
         JLabel label_notelp = new JLabel();
         label_notelp.setText("Nomor Telepon");
         panel_context.add(label_notelp, gbc4);
-        
+
         GridBagConstraints gbc5 = new GridBagConstraints();
         gbc5.gridx = 0;
         gbc5.gridy = 4;
@@ -363,13 +368,13 @@ public class GAS extends javax.swing.JFrame {
         gbc5.fill = GridBagConstraints.CENTER;
         gbc5.anchor = GridBagConstraints.CENTER;
         gbc5.insets = new Insets(10, 0, 0, 0);
-        
+
         TextField textField_notelp = new TextField();
         textField_notelp.setColumns(20);
         textField_notelp.setBackground(new java.awt.Color(153, 153, 153));
         textField_notelp.setFont(new java.awt.Font("Arial", 0, 14));
         panel_context.add(textField_notelp, gbc5);
-        
+
         GridBagConstraints gbc6 = new GridBagConstraints();
         gbc6.gridx = 0;
         gbc6.gridy = 5;
@@ -378,11 +383,11 @@ public class GAS extends javax.swing.JFrame {
         gbc6.fill = GridBagConstraints.CENTER;
         gbc6.anchor = GridBagConstraints.CENTER;
         gbc6.insets = new Insets(10, 0, 0, 0);
-        
+
         Checkbox checkbox_VIP = new Checkbox();
         checkbox_VIP.setLabel("VIP");
         panel_context.add(checkbox_VIP, gbc6);
-        
+
         GridBagConstraints gbc7 = new GridBagConstraints();
         gbc7.gridx = 0;
         gbc7.gridy = 6;
@@ -391,11 +396,11 @@ public class GAS extends javax.swing.JFrame {
         gbc7.fill = GridBagConstraints.CENTER;
         gbc7.anchor = GridBagConstraints.CENTER;
         gbc7.insets = new Insets(10, 0, 0, 0);
-        
+
         Checkbox checkbox_Member = new Checkbox();
         checkbox_Member.setLabel("Member");
         panel_context.add(checkbox_Member, gbc7);
-        
+
         GridBagConstraints gbc8 = new GridBagConstraints();
         gbc8.gridx = 0;
         gbc8.gridy = 7;
@@ -404,7 +409,7 @@ public class GAS extends javax.swing.JFrame {
         gbc8.fill = GridBagConstraints.CENTER;
         gbc8.anchor = GridBagConstraints.CENTER;
         gbc8.insets = new Insets(10, 0, 0, 0);
-        
+
         JButton button_submit = new JButton();
         button_submit.setPreferredSize(new Dimension(100,50));
         button_submit.setBackground(new java.awt.Color(255, 0, 0));
@@ -415,7 +420,7 @@ public class GAS extends javax.swing.JFrame {
             }
         });
         panel_context.add(button_submit, gbc8);
-        
+
         GridBagConstraints gbc9 = new GridBagConstraints();
         gbc9.gridx = 0;
         gbc9.gridy = 8;
@@ -424,7 +429,7 @@ public class GAS extends javax.swing.JFrame {
         gbc9.fill = GridBagConstraints.CENTER;
         gbc9.anchor = GridBagConstraints.CENTER;
         gbc9.insets = new Insets(10, 0, 0, 0);
-        
+
         JButton button_update_pengguna = new JButton();
         button_update_pengguna.setPreferredSize(new Dimension(150,50));
         button_update_pengguna.setBackground(new java.awt.Color(255, 51, 51));
@@ -513,20 +518,57 @@ public class GAS extends javax.swing.JFrame {
             }
         });
         panel_context.add(button_update_pengguna, gbc9);
-        
+
         tab_holder.addTab("Pengguna", panel_pengguna);
         tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
     }//GEN-LAST:event_button_home_penggunaActionPerformed
 
-    private void button_pembayaran_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_pembayaran_homeActionPerformed
-        JPanel panel_pembelian = new JPanel(new BorderLayout());
+    private void button_pembayaran_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_pembayaran_homeActionPerforme
+        JPanel panel_pembelian = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+        JLabel label_title_pembelian = new JLabel("Id customer: ");
+        panel_pembelian.add(label_title_pembelian);
+
+        TextField textField_id = new TextField();
+        textField_id.setColumns(20);
+        textField_id.setBackground(new java.awt.Color(153, 153, 153));
+        textField_id.setFont(new java.awt.Font("Arial", 0, 14));
+        panel_pembelian.add(textField_id);
+
+        JButton button_submit = new JButton();
+        button_submit.setBackground(new java.awt.Color(255, 0, 0));
+        button_submit.setText("Bayar");
+        button_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+            }
+        });
+        panel_pembelian.add(button_submit);
+
+        JPanel panel_list = new JPanel();
+        panel_list.setBackground(new Color(255,255,255));
+        panel_list.setPreferredSize(new Dimension(950,500));
+
+        DefaultListModel<String> listModel = new DefaultListModel<String>();
+        listModel.addElement("Item 1");
+        listModel.addElement("Item 2");
+        listModel.addElement("Item 3");
+        JList itemList = new JList<>(listModel);
+        itemList.setPreferredSize(new Dimension(940,550));
+
+
+
+
+        panel_list.add(new JScrollPane(itemList), BorderLayout.CENTER);
+        panel_pembelian.add(panel_list);
 
         tab_holder.addTab("Pembelian", panel_pembelian);
         tab_holder.setSelectedIndex(tab_holder.getTabCount()-1);
+
+
     }//GEN-LAST:event_button_pembayaran_homeActionPerformed
 
     private void button_home_barangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_home_barangActionPerformed
-        // TODO add your handling code here:
         JPanel panel_barang = new JPanel(new BorderLayout());
 
         JPanel panel_title = new JPanel();
@@ -870,7 +912,7 @@ public class GAS extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

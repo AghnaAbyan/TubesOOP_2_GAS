@@ -3,28 +3,24 @@ package DataStore;
 import DataStore.Storer.StorerBarang;
 import DataStore.Storer.StorerCustomer;
 import Membership.Customer;
-import Membership.Member;
-import Membership.Transaction;
-
-import java.util.ArrayList;
 
 
 public class IDatabase {
-    public static void main(String[] args) {
-        IDatabase db = new IDatabase();
-        Member a = new Member("Obedc","081");
-        Member b = new Member("Obeds","081");
-        Customer c = new Customer();
-        db.addCustomer(b);
+//    public static void main(String[] args) {
+//        IDatabase db = new IDatabase();
+//        Member a = new Member("Obedc","081");
+//        Member b = new Member("Obeds","081");
+//        Customer c = new Customer();
 //        db.addCustomer(b);
-
-        System.out.println(a.getNama());
-
-    }
+////        db.addCustomer(b);
+//
+//        System.out.println(a.getNama());
+//
+//    }
     private final StorerCustomer customerBuff;
     private final StorerBarang gudangBuff;
 
-    IDatabase(){
+    public IDatabase(){
         customerBuff = new StorerCustomer();
         gudangBuff = new StorerBarang();
     }
