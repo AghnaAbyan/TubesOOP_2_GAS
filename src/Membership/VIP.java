@@ -6,18 +6,16 @@ public class VIP extends RegisteredCustomer{
         this.status = "VIP";
     }
 
-    public VIP(String nama, String noTelp, int poin){
-        super(nama, noTelp, poin);
+    public VIP(String nama, String noTelp, int poin, boolean isActive){
+        super(nama, noTelp, poin, isActive);
         this.status = "VIP";
     }
-
-    public String getStatus(){return status;}
 
     public void addPoin(int bayar) {
         this.poin += (0.01 * bayar);
     }
 
-    public void minusPoin(int bayar) {
+    public void spendPoin(int bayar) {
         double amount = 0.1 * bayar;
         this.poin -= (0.01 * amount);
     }
