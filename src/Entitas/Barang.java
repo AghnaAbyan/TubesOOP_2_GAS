@@ -10,23 +10,23 @@ public class Barang {
     private String kategori;
     private String gambar;
 
-    
-    public int GetIDBarang(){
+    public void setIdBarang(int idBarang){this.idBarang = idBarang;}
+    public int getIdBarang(){
         return this.idBarang;
     }
-    public String GetNamaBarang(){
+    public String getNamaBarang(){
         return this.namaBarang;
     }
-    public Double GetHargaBarang(){
+    public Double getHargaBarang(){
         return this.hargaBarang;
     }
-    public Double GetHargaBeli(){
+    public Double getHargaBeli(){
         return this.hargaBeli;
     }
-    public String GetKategori(){
+    public String getKategori(){
         return this.kategori;
     }
-    public String GetGambar(){
+    public String getGambar(){
         return this.gambar;
     }
 }
