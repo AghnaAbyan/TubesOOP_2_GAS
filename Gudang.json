@@ -1,0 +1,18 @@
+{
+  "1": {
+    "idBarang": 1,
+    "namaBarang": "Panadol",
+    "hargaBarang": 5000.0,
+    "hargaBeli": 7000.0,
+    "kategori": "Obat",
+    "gambar": "./"
+  },
+  "2": {
+    "idBarang": 2,
+    "namaBarang": "Milkita",
+    "hargaBarang": 1000.0,
+    "hargaBeli": 2000.0,
+    "kategori": "Permen",
+    "gambar": "./"
+  }
+}
