@@ -8,12 +8,12 @@ public class Transaction {
     private final ArrayList<Bought> list;
     private final String timestamp;
 
-    Transaction(ArrayList<Bought> list, LocalDateTime timestamp){
+    public Transaction(ArrayList<Bought> list, LocalDateTime timestamp){
         this.list = list;
         this.timestamp = timestamp.toString();
     }
 
-    Transaction(){
+    public Transaction(){
         this.list = new ArrayList<>();
         this.timestamp = LocalDateTime.now().toString();
     }
@@ -29,6 +29,9 @@ public class Transaction {
 
     public ArrayList<Bought> getList(){return list;}
     public String getTimestamp(){return timestamp;}
+    public void cetakBill(){
+
+    }
 }
 
 class Bought{
