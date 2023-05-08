@@ -13,7 +13,7 @@ public class Transaction {
         this.timestamp = timestamp.toString();
     }
 
-    Transaction(){
+    public Transaction(){
         this.list = new ArrayList<>();
         this.timestamp = LocalDateTime.now().toString();
     }

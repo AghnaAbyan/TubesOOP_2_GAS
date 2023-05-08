@@ -1,5 +1,8 @@
 package  Entitas;
-import java.util.ArrayList;import javafx.util.Pair;
+
+import javafx.util.Pair;
+
+import java.util.ArrayList;
 public class Gudang {
     //stok, idBarang
     private ArrayList<Pair<Integer,Integer>> listStok;
@@ -11,18 +14,19 @@ public class Gudang {
         this.listBeli =listBeli;
     }
 
-    void getStok(Integer idBarang){
+    Integer getStok(Integer idBarang){
         for(Pair<Integer, Integer> pasangan : this.listStok){
             if(pasangan.getValue() == idBarang){
                 return pasangan.getKey();
             }
         }
+        return idBarang;
     }
 
     void addStok(Integer stok, Integer idBarang){
-    bool found = false;
+    boolean found = false;
     int i = 0;
-    while(i<this.listStok.length && !found){
+    while(i<this.listStok.size() && !found){
         if(this.listStok.get(i).getValue() == idBarang){
             found = true;
         }else{

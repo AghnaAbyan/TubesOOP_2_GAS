@@ -1,6 +1,8 @@
 package main;
 
 import DataStore.IDatabase;
+import Membership.Member;
+import Membership.VIP;
 
 import javax.swing.*;
 import java.awt.*;
@@ -268,7 +270,6 @@ public class GAS extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_home_penggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_home_penggunaActionPerformed
-        // TODO add your handling code here:
         JPanel panel_pengguna = new JPanel(new BorderLayout());
 
         JPanel panel_title = new JPanel();
@@ -416,7 +417,16 @@ public class GAS extends javax.swing.JFrame {
         button_submit.setText("Submit");
         button_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                if (textField_nama.getText() != "" && textField_notelp.getText() != ""){
+                    if (checkbox_Member.isEnabled() && (!checkbox_VIP.isEnabled())){
+                        Member m = new Member(textField_nama.getText(), textField_notelp.getText());
+                        db.addCustomer(m);
+                    }
+                    if ((!checkbox_Member.isEnabled()) && checkbox_VIP.isEnabled()){
+                        VIP v = new VIP(textField_nama.getText(), textField_notelp.getText());
+                        db.addCustomer(v);
+                    }
+                }
             }
         });
         panel_context.add(button_submit, gbc8);
@@ -803,7 +813,6 @@ public class GAS extends javax.swing.JFrame {
     }//GEN-LAST:event_button_home_barangActionPerformed
 
     private void button_home_pengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_home_pengaturanActionPerformed
-        // TODO add your handling code here:
         JPanel panel_pengaturan = new JPanel(new BorderLayout());
         JPanel panel_title = new JPanel();
         panel_title.setBackground(new Color(238, 77, 45));
