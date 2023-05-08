@@ -2,9 +2,10 @@ package DataStore;
 
 import DataStore.Storer.StorerBarang;
 import DataStore.Storer.StorerCustomer;
+import Entitas.Barang;
 import Membership.Customer;
 import Membership.Member;
-import Membership.Transaction;
+import Entitas.Transaction;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class IDatabase {
     }
 
 //    public Barang getBarang(int idBarang){
-//
+//        return gudangBuff.get
 //    }
 //
 //    public ArrayList<Transaction> getBarangBeli(int idUser){
@@ -54,4 +55,7 @@ public class IDatabase {
 //    }
 //
 //    public BarangStok getBarangStok(int idBarang){}
+//    public void beliBarang(int idUser, int idBarang, int jumlah){
+//
+//    }
 }
