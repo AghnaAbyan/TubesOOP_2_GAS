@@ -1,12 +1,14 @@
 package main;
 
 import DataStore.IDatabase;
+import Entitas.Barang;
 import Membership.Member;
 import Membership.VIP;
 
 import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /*
@@ -550,6 +552,7 @@ public class GAS extends javax.swing.JFrame {
         button_submit.setText("Bayar");
         button_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                
 
             }
         });
@@ -560,14 +563,16 @@ public class GAS extends javax.swing.JFrame {
         panel_list.setPreferredSize(new Dimension(950,500));
 
         DefaultListModel<String> listModel = new DefaultListModel<String>();
-        listModel.addElement("Item 1");
-        listModel.addElement("Item 2");
-        listModel.addElement("Item 3");
+
+        ArrayList<Barang> list = new ArrayList<Barang>();
+        list = db.getGudangList();
+
+        for(int i = 0; i < list.size(); i++){
+            listModel.addElement(list.get(i).getNamaBarang());
+        }
+
         JList itemList = new JList<>(listModel);
         itemList.setPreferredSize(new Dimension(940,550));
-
-
-
 
         panel_list.add(new JScrollPane(itemList), BorderLayout.CENTER);
         panel_pembelian.add(panel_list);
