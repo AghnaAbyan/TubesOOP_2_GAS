@@ -34,4 +34,5 @@ public class Customer implements CanBuy {
     }
     public ArrayList<Transaction> getHistory(){return this.history;}
     public String getStatus(){return status;}
+    public Transaction getActiveTransaction(){return this.activeTransaction;}
 }
