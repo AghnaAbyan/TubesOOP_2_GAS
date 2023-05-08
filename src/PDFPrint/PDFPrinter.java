@@ -45,6 +45,7 @@ public class PDFPrinter implements Runnable{
         }
         doc.add(table);
         doc.close();
+        Thread.sleep(10000);
         System.out.println("PDF creation is a success"); 
         }catch(Exception e){
             e.printStackTrace();
