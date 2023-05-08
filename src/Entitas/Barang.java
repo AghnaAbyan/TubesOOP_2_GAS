@@ -10,6 +10,14 @@ public class Barang {
     private String kategori;
     private String gambar;
 
+    public Barang(String namaBarang, Double hargaBarang, Double hargaBeli, String kategori, String gambar){
+        this.namaBarang = namaBarang;
+        this.hargaBarang = hargaBarang;
+        this.hargaBeli = hargaBeli;
+        this.kategori = kategori;
+        this.gambar = gambar;
+    }
+
     public void setIdBarang(int idBarang){this.idBarang = idBarang;}
     public int getIdBarang(){
         return this.idBarang;
