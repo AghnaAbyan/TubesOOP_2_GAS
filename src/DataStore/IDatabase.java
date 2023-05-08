@@ -36,8 +36,8 @@ public class IDatabase {
         gudangBuff = new StorerBarang();
     }
 
-    public void addCustomer(Customer customer){
-        this.customerBuff.addCustomer(customer);
+    public int addCustomer(Customer customer){
+        return this.customerBuff.addCustomer(customer);
     }
 
     public void updateCustomer(Customer customer){
@@ -59,9 +59,9 @@ public class IDatabase {
         return customerBuff.getCustomer(idUser);
     }
 
-//    public Barang getBarang(int idBarang){
-//        return gudangBuff.get
-//    }
+    public Barang getBarang(int idBarang){
+        return gudangBuff.getBarang(idBarang);
+    }
 //
 //    public ArrayList<Transaction> getBarangBeli(int idUser){
 //
@@ -72,7 +72,26 @@ public class IDatabase {
 //    }
 //
 //    public BarangStok getBarangStok(int idBarang){}
-//    public void beliBarang(int idUser, int idBarang, int jumlah){
-//
-//    }
+    public void masukkanKeranjang(int idUser, int idBarang, int jumlah){
+        Customer cust = this.customerBuff.getCustomer(idUser);
+
+        cust.addToCart(idBarang, jumlah);
+    }
+
+    public void masukkanKeranjang(Customer customer, int idBarang, int jumlah){
+        int id = customer.getIdUser();
+        if(id == -1){
+            id = this.addCustomer(customer);
+        }
+
+        customer.addToCart(idBarang, jumlah);
+    }
+
+    public int bayarKeranjang(int idUser){
+        return this.customerBuff.getCustomer(idUser).buy();
+    }
+
+    public int bayarKeranjang (Customer customer){
+        return customer.buy();
+    }
 }
