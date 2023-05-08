@@ -1,20 +1,140 @@
 {
   "1": {
-    "status": "Customer",
-    "idUser": 1,
-    "history": []
+    "nama": "Obedc",
+    "noTelp": "081",
+    "isActive": true,
+    "poin": 0,
+    "status": "Member",
+    "idUser": 5,
+    "history": [
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 2
+          }
+        ],
+        "timestamp": "2023-05-08T09:05:36.183673500"
+      },
+      {
+        "list": [
+          {
+            "idBarang": 2,
+            "jumlah": 5
+          }
+        ],
+        "timestamp": "2023-05-08T09:06:13.106388400"
+      },
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 5
+          },
+          {
+            "idBarang": 5,
+            "jumlah": 3
+          }
+        ],
+        "timestamp": "2023-05-08T09:06:41.100894900"
+      }
+    ]
   },
   "2": {
-    "status": "Customer",
+    "nama": "Obedc",
+    "noTelp": "081",
+    "isActive": true,
+    "poin": 0,
+    "status": "Member",
     "idUser": 2,
     "history": []
   },
   "3": {
-    "nama": "Obeds",
+    "nama": "Obedc",
     "noTelp": "081",
+    "isActive": true,
     "poin": 0,
     "status": "Member",
     "idUser": 3,
-    "history": []
+    "history": [
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 2
+          }
+        ],
+        "timestamp": "2023-05-08T09:05:36.183673500"
+      }
+    ]
+  },
+  "4": {
+    "nama": "Obedc",
+    "noTelp": "081",
+    "isActive": true,
+    "poin": 0,
+    "status": "Member",
+    "idUser": 4,
+    "history": [
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 2
+          }
+        ],
+        "timestamp": "2023-05-08T09:05:36.183673500"
+      },
+      {
+        "list": [
+          {
+            "idBarang": 2,
+            "jumlah": 5
+          }
+        ],
+        "timestamp": "2023-05-08T09:06:13.106388400"
+      }
+    ]
+  },
+  "5": {
+    "nama": "Obedc",
+    "noTelp": "081",
+    "isActive": true,
+    "poin": 0,
+    "status": "Member",
+    "idUser": 5,
+    "history": [
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 2
+          }
+        ],
+        "timestamp": "2023-05-08T09:05:36.183673500"
+      },
+      {
+        "list": [
+          {
+            "idBarang": 2,
+            "jumlah": 5
+          }
+        ],
+        "timestamp": "2023-05-08T09:06:13.106388400"
+      },
+      {
+        "list": [
+          {
+            "idBarang": 1,
+            "jumlah": 5
+          },
+          {
+            "idBarang": 5,
+            "jumlah": 3
+          }
+        ],
+        "timestamp": "2023-05-08T09:06:41.100894900"
+      }
+    ]
   }
 }
