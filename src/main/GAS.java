@@ -2,13 +2,16 @@ package main;
 
 import DataStore.IDatabase;
 import Entitas.Barang;
+import Membership.Customer;
 import Membership.Member;
 import Membership.VIP;
+import PDFPrint.PDFPrinter;
 
 import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 /*
@@ -552,8 +555,12 @@ public class GAS extends javax.swing.JFrame {
         button_submit.setText("Bayar");
         button_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
+                Customer c = db.getMembership(Integer.parseInt(textField_id.getText()));
+                ArrayList<?> l = c.getActiveTransaction().getList();
+                java.util.List list = Collections.unmodifiableList(l);
 
+                PDFPrinter printer = new PDFPrinter(list, String.valueOf(c.getIdUser()));
+                printer.run();
             }
         });
         panel_pembelian.add(button_submit);
