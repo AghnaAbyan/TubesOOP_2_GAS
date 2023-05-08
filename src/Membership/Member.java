@@ -5,8 +5,8 @@ public class Member extends RegisteredCustomer{
         super(nama, noTelp);
         this.status = "Member";
     }
-    public Member(String nama, String noTelp, int poin){
-        super(nama, noTelp, poin);
+    public Member(String nama, String noTelp, int poin, boolean isActive){
+        super(nama, noTelp, poin, isActive);
         this.status = "Member";
     }
 
@@ -15,7 +15,7 @@ public class Member extends RegisteredCustomer{
         this.poin += (0.01 * amount);
     }
 
-    public void minusPoin(int amount) {
+    public void spendPoin(int amount) {
         this.poin -= (0.01 * amount);
     }
 }
