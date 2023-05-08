@@ -1,5 +1,7 @@
 package Membership;
 
+import Entitas.Transaction;
+
 import java.util.ArrayList;
 
 public class Customer implements CanBuy {

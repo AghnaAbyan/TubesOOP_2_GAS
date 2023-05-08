@@ -2,21 +2,23 @@ package DataStore;
 
 import DataStore.Storer.StorerBarang;
 import DataStore.Storer.StorerCustomer;
+import Entitas.Barang;
 import Membership.Customer;
+import Membership.Member;
+import Entitas.Transaction;
+
+import java.util.ArrayList;
 
 
 public class IDatabase {
-//    public static void main(String[] args) {
-//        IDatabase db = new IDatabase();
-//        Member a = new Member("Obedc","081");
-//        Member b = new Member("Obeds","081");
-//        Customer c = new Customer();
-//        db.addCustomer(b);
-////        db.addCustomer(b);
-//
-//        System.out.println(a.getNama());
-//
-//    }
+    public static void main(String[] args) {
+        IDatabase db = new IDatabase();
+        
+        Member a = (Member)db.getMembership(3); // Load Member dari database
+        Customer c = db.getMembership(1); // Load Customer dari database
+        Member b = new Member("Obedc","081"); // Bikin member baru
+        db.addCustomer(b);
+    }
     private final StorerCustomer customerBuff;
     private final StorerBarang gudangBuff;
 
@@ -38,7 +40,7 @@ public class IDatabase {
     }
 
 //    public Barang getBarang(int idBarang){
-//
+//        return gudangBuff.get
 //    }
 //
 //    public ArrayList<Transaction> getBarangBeli(int idUser){
@@ -50,4 +52,7 @@ public class IDatabase {
 //    }
 //
 //    public BarangStok getBarangStok(int idBarang){}
+//    public void beliBarang(int idUser, int idBarang, int jumlah){
+//
+//    }
 }
