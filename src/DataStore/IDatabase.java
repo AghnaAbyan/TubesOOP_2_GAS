@@ -13,14 +13,11 @@ import java.util.ArrayList;
 public class IDatabase {
     public static void main(String[] args) {
         IDatabase db = new IDatabase();
-        Member a = new Member("Obedc","081");
-        Member b = new Member("Obeds","081");
-        Customer c = new Customer();
+        
+        Member a = (Member)db.getMembership(3); // Load Member dari database
+        Customer c = db.getMembership(1); // Load Customer dari database
+        Member b = new Member("Obedc","081"); // Bikin member baru
         db.addCustomer(b);
-//        db.addCustomer(b);
-
-        System.out.println(a.getNama());
-
     }
     private final StorerCustomer customerBuff;
     private final StorerBarang gudangBuff;
