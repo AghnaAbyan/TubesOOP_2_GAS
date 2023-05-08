@@ -2,23 +2,18 @@ package DataStore;
 
 import DataStore.Storer.StorerBarang;
 import DataStore.Storer.StorerCustomer;
-import Entitas.Barang;
 import Membership.Customer;
-import Membership.Member;
-import Entitas.Transaction;
-
-import java.util.ArrayList;
 
 
 public class IDatabase {
-    public static void main(String[] args) {
-        IDatabase db = new IDatabase();
-        
-        Member a = (Member)db.getMembership(3); // Load Member dari database
-        Customer c = db.getMembership(1); // Load Customer dari database
-        Member b = new Member("Obedc","081"); // Bikin member baru
-        db.addCustomer(b);
-    }
+//    public static void main(String[] args) {
+//        IDatabase db = new IDatabase();
+//
+//        Member a = (Member)db.getMembership(3); // Load Member dari database
+//        Customer c = db.getMembership(1); // Load Customer dari database
+//        Member b = new Member("Obedc","081"); // Bikin member baru
+//        db.addCustomer(b);
+//    }
     private final StorerCustomer customerBuff;
     private final StorerBarang gudangBuff;
 

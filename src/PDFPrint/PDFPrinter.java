@@ -12,9 +12,10 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Paragraph;
+import java.util.*;
 public class PDFPrinter implements Runnable{
     private List<Barang> data;
-    private string filaName;
+    private String filaName;
 
     public PDFPrinter(List<Barang> data, String filaName){
         this.data = data;
