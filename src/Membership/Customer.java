@@ -15,7 +15,7 @@ public class Customer implements CanBuy {
         this.history = new ArrayList<>();
     }
 
-    public void addToBasket(int idBarang, int jumlah){
+    public void addToCart(int idBarang, int jumlah){
         if(activeTransaction == null) activeTransaction = new Transaction();
 
         activeTransaction.addList(idBarang, jumlah);
